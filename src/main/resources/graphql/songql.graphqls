@@ -1,0 +1,15 @@
+type Song {
+    id: ID!,
+    name: String,
+    artist: String
+}
+
+type Query {
+    getSongs(page: Int!, size: Int!): [Song],
+    getSongById(id: ID!): Song
+}
+type Mutation {
+    saveSong(name: String!, artist: String!): Song,
+    updateSong(id: ID!, name: String!, artist: String!): Song,
+    deleteSong(id: ID!): Song
+}
